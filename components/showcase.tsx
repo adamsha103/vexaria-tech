@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Monitor, Smartphone, Layers, CheckCircle2, Shield, Bell, Sparkles, BarChart, ArrowRight } from "lucide-react";
 
 export default function Showcase() {
-  const [showcaseTab, setShowcaseTab] = useState<"overview" | "analytics" | "users">("overview");
+  const [showcaseTab, setShowcaseTab] = useState<"overview" | "analytics">("overview");
 
   return (
     <section id="showcase" className="py-20 md:py-28 bg-[#0B1220] relative overflow-hidden">
@@ -66,14 +66,7 @@ export default function Showcase() {
                 >
                   Metrics
                 </button>
-                <button
-                  onClick={() => setShowcaseTab("users")}
-                  className={`px-3 py-1 rounded-md font-medium transition-all ${
-                    showcaseTab === "users" ? "bg-violet-600 text-white" : "text-slate-400 hover:text-white"
-                  }`}
-                >
-                  Live Logs
-                </button>
+
               </div>
             </div>
 
@@ -154,14 +147,7 @@ export default function Showcase() {
                 </div>
               )}
 
-              {showcaseTab === "users" && (
-                <div className="p-4 rounded-xl bg-slate-950/90 border border-white/10 font-mono text-xs space-y-2">
-                  <div className="text-emerald-400">[2026-09-23 10:40:02] INFO: WebSocket Connected to Vercel Edge</div>
-                  <div className="text-slate-300">[2026-09-23 10:40:05] POST /api/v1/checkout - 200 OK (24ms)</div>
-                  <div className="text-slate-300">[2026-09-23 10:40:09] GET /api/v1/analytics - 200 OK (18ms)</div>
-                  <div className="text-cyan-400">[2026-09-23 10:40:12] SUCCESS: Push Notification Dispatched to iOS / Android</div>
-                </div>
-              )}
+
             </div>
 
             {/* Floating Web Badge */}

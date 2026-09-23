@@ -293,7 +293,7 @@ export default function Hero() {
               <div className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-600 to-cyan-500 p-0.5 rounded-xl shadow-lg hidden sm:block">
                 <div className="bg-[#0F172A] px-3 py-1.5 rounded-[10px] text-xs font-mono text-white flex items-center gap-2">
                   <Cpu className="w-3.5 h-3.5 text-cyan-400 animate-spin" />
-                  <span>AI & Cloud Architecture Ready</span>
+                  <span>Cloud & System Architecture Ready</span>
                 </div>
               </div>
             </div>

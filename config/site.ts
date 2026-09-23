@@ -62,14 +62,6 @@ export const siteConfig = {
     },
     {
       id: "05",
-      title: "AI & Automation",
-      description: "AI-powered features, smart search, LLM integrations, and workflow automation that boost productivity.",
-      icon: "Sparkles",
-      features: ["LLM & Chatbot Integration", "Automated Workflows", "Smart Data Extraction", "Predictive Dashboards"],
-      badge: "Innovative",
-    },
-    {
-      id: "06",
       title: "Cloud & Deployment",
       description: "Reliable production deployment, hosting architecture, automated CI/CD pipelines, and cloud setup.",
       icon: "Cloud",
@@ -131,7 +123,6 @@ export const siteConfig = {
     { name: "PostgreSQL", category: "Database", icon: "Database", color: "text-blue-300" },
     { name: "Prisma ORM", category: "Database", icon: "Cpu", color: "text-indigo-400" },
     { name: "Vercel / Cloud", category: "Cloud", icon: "Cloud", color: "text-slate-200" },
-    { name: "AI & LLM Tools", category: "AI", icon: "Sparkles", color: "text-violet-400" },
   ],
 
   portfolioProjects: [
@@ -180,15 +171,7 @@ export const siteConfig = {
       featured: false,
       accentColor: "from-blue-500 to-violet-500",
     },
-    {
-      title: "MetricsPro Analytics",
-      category: "SaaS Dashboard",
-      description: "High-density real-time analytics platform for SaaS founders displaying MRR, churn rate, and live visitor feeds.",
-      tags: ["Next.js", "Recharts", "Tailwind CSS", "Dark Mode"],
-      metrics: "Sub-100ms Page Loads",
-      featured: true,
-      accentColor: "from-violet-600 to-pink-500",
-    },
+
   ],
 
   caseStudy: {
@@ -268,6 +251,5 @@ export const siteConfig = {
     { name: "Node.js", icon: "Server" },
     { name: "PostgreSQL", icon: "Database" },
     { name: "Cloud / Vercel", icon: "Cloud" },
-    { name: "AI Integration", icon: "Sparkles" },
   ],
 };

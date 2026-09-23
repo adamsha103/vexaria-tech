@@ -65,7 +65,7 @@ export default function Footer() {
               <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">Web Applications</a></li>
               <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">Mobile Applications</a></li>
               <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">Custom Software</a></li>
-              <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">AI &amp; Automation</a></li>
+
             </ul>
           </div>
 
