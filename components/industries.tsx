@@ -1,7 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { Stethoscope, ShoppingBag, Building2, Armchair, ArrowUpRight, Sparkles, CheckCircle2 } from "lucide-react";
+import {
+  Stethoscope,
+  ShoppingBag,
+  Building2,
+  Armchair,
+  Gem,
+  Shirt,
+  Smartphone,
+  ArrowUpRight,
+  Sparkles,
+  CheckCircle2,
+} from "lucide-react";
 
 export default function Industries() {
   const scrollToContact = (industryName: string) => {
@@ -13,44 +24,74 @@ export default function Industries() {
 
   const industryList = [
     {
-      id: "medical",
-      title: "Medical, Hospitals & Healthcare",
-      tag: "Healthcare & Hospitals",
-      desc: "Custom hospital management systems, patient portals, online doctor appointment booking, telemedicine web apps, and EHR systems.",
-      image: "/images/industry-medical.webp",
-      icon: Stethoscope,
-      accent: "from-blue-600 to-cyan-500",
-      features: ["Doctor Appointment Booking", "Patient Health Records", "Pharmacy & Lab Integration"],
-    },
-    {
       id: "grocery",
-      title: "Grocery & Vegetable Shops",
-      tag: "Retail & Grocery",
-      desc: "Online grocery delivery web & mobile apps, fresh produce inventory tracking, instant checkout, and local store delivery management.",
+      title: "Grocery & Fresh Vegetable Shops",
+      tag: "Kirana & Vegetable Stores",
+      desc: "Online fresh vegetable & grocery delivery mobile apps, item weight stock management, Indian Rupee (₹) billing, and WhatsApp order notifications.",
       image: "/images/industry-grocery.webp",
       icon: ShoppingBag,
-      accent: "from-emerald-600 to-teal-500",
-      features: ["Live Stock & Weight Catalog", "Express Local Delivery", "WhatsApp Order Notifications"],
+      pricingSample: "Daily Fresh Stock (₹49/kg)",
+      features: ["Live Stock & Weight Pricing (₹)", "Express Local Store Delivery", "Direct WhatsApp Order Dispatch"],
+    },
+    {
+      id: "medical",
+      title: "Medical, Hospitals & Clinics",
+      tag: "Healthcare & Diagnostics",
+      desc: "Hospital management portals, online doctor appointment scheduling, telemedicine consultation, patient health records, and pharmacy EHR.",
+      image: "/images/industry-medical.webp",
+      icon: Stethoscope,
+      pricingSample: "Doctor Consultation (₹500)",
+      features: ["Online Doctor Appointment Booking", "Patient Health & Lab Diagnostics", "Pharmacy Billing & EHR Records"],
     },
     {
       id: "realestate",
-      title: "Real Estate & Property Portals",
-      tag: "Real Estate & Housing",
-      desc: "Property listing websites, apartment rental management portals, virtual tour integrations, lead management CRMs, and agent dashboards.",
+      title: "Real Estate & Housing Portals",
+      tag: "Plots, Flats & Housing",
+      desc: "Property listing portals, apartment & plot sales, virtual property tours, lead management CRMs, and real estate agent dashboards across Tamil Nadu.",
       image: "/images/industry-realestate.webp",
       icon: Building2,
-      accent: "from-violet-600 to-blue-600",
-      features: ["Interactive Property Maps", "Lead Inquiry CRM", "360 Virtual Tour Viewer"],
+      pricingSample: "Plots & Flats (₹45 L - ₹1.2 Cr)",
+      features: ["Interactive Map Property Search", "Lead Management & Inquiry CRM", "360° Virtual Property Tour Viewer"],
     },
     {
       id: "furniture",
-      title: "Furniture, Bedding & Home Goods",
-      tag: "Furniture & Decor",
-      desc: "E-commerce stores for furniture manufacturers and bedding shops with 3D product customization, bed sizing options, and delivery tracking.",
+      title: "Furniture, Bedding & Home Decor",
+      tag: "Furniture & Bedding",
+      desc: "Custom e-commerce platforms for furniture manufacturers, mattress shops, and bedding stores with custom sizing and home delivery tracking.",
       image: "/images/industry-furniture.webp",
       icon: Armchair,
-      accent: "from-amber-500 to-orange-600",
-      features: ["Custom Dimension Selectors", "High-Res 3D Product Gallery", "Local Delivery Scheduler"],
+      pricingSample: "Teak Sets & Beds (₹35,000)",
+      features: ["Custom Dimension & Wood Selector", "HD 3D Product Furniture Gallery", "Doorstep Delivery & Assembly Scheduler"],
+    },
+    {
+      id: "jewelry",
+      title: "Gold Jewelry & Ornaments Shops",
+      tag: "Gold & Jewelry Showrooms",
+      desc: "Digital showrooms and mobile apps for gold jewelry stores, 22K/24K gold rate calculators, ornament catalogs, and secure inquiry forms.",
+      image: "/images/portfolio-novastore.webp",
+      icon: Gem,
+      pricingSample: "22K Gold Ornaments (₹58,000)",
+      features: ["Live Today's Gold Rate (₹/gram)", "HD Jewelry Showcase Gallery", "Custom Weight & Metal Calculator"],
+    },
+    {
+      id: "textiles",
+      title: "Textiles, Sarees & Garment Stores",
+      tag: "Silk Sarees & Garments",
+      desc: "E-commerce web apps for silk saree showrooms, clothing boutiques, and garment retail shops with dynamic size charts and coupon codes.",
+      image: "/images/portfolio-edupulse.webp",
+      icon: Shirt,
+      pricingSample: "Kanchipuram Silk Sarees (₹12,500)",
+      features: ["Filter by Fabric, Color & Occasion", "Custom Saree Draping Previews", "Pan-India Shipping & Order Tracking"],
+    },
+    {
+      id: "electronics",
+      title: "Electronics & Mobile Retail Shops",
+      tag: "Mobiles & Appliances",
+      desc: "Digital storefronts for mobile phone shops and electronic showrooms with EMI calculators, brand filters, and warranty tracking.",
+      image: "/images/portfolio-logix.webp",
+      icon: Smartphone,
+      pricingSample: "Smartphones & Appliances (₹18,999)",
+      features: ["Instant No-Cost EMI Calculator", "Product Specs Comparison Tool", "Store Pickup & Express Delivery"],
     },
   ];
 
@@ -62,20 +103,20 @@ export default function Industries() {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Tailored Industry Solutions</span>
+            <span>7 Core Business Sectors</span>
           </div>
 
           <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 2.75rem)" }}>
-            Engineered For <span className="text-gradient-brand">Every Business Sector</span>
+            Engineered For <span className="text-gradient-brand">Every Indian Business Sector</span>
           </h2>
 
           <p className="text-slate-300 text-xs sm:text-base leading-relaxed">
-            From vegetable shops and medical hospitals to real estate firms and furniture stores, we build custom digital platforms for any product or industry.
+            From vegetable shops and medical hospitals to real estate, furniture, gold jewelry, and saree showrooms across Tamil Nadu & India — we build custom web & mobile solutions with Indian Rupee (₹) integration.
           </p>
         </div>
 
         {/* Industry Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {industryList.map((ind) => {
             const IconComponent = ind.icon;
             return (
@@ -86,7 +127,7 @@ export default function Industries() {
               >
                 <div>
                   {/* WebP Image Banner Display */}
-                  <div className="h-56 relative overflow-hidden">
+                  <div className="h-48 relative overflow-hidden">
                     <Image
                       src={ind.image}
                       alt={ind.title}
@@ -95,31 +136,34 @@ export default function Industries() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1524] via-transparent to-black/30 z-10" />
 
-                    {/* Top Badge */}
-                    <div className="relative z-20 p-4 flex items-center justify-between">
-                      <div className="flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-950/80 border border-white/20 text-xs font-mono font-bold text-cyan-300 backdrop-blur-md shadow-md">
-                        <IconComponent className="w-4 h-4 text-cyan-400" />
-                        <span>{ind.tag}</span>
+                    {/* Top Badges */}
+                    <div className="relative z-20 p-3 flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-950/85 border border-white/20 text-[11px] font-mono font-bold text-cyan-300 backdrop-blur-md shadow-md">
+                        <IconComponent className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                        <span className="truncate">{ind.tag}</span>
                       </div>
+                      <span className="px-2 py-0.5 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-[10px] font-mono font-bold text-emerald-300 shadow-md shrink-0">
+                        {ind.pricingSample}
+                      </span>
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-5 space-y-3">
-                    <h3 className="font-heading font-bold text-lg sm:text-xl text-white group-hover:text-cyan-300 transition-colors">
+                  <div className="p-4 space-y-2.5">
+                    <h3 className="font-heading font-bold text-base sm:text-lg text-white group-hover:text-cyan-300 transition-colors">
                       {ind.title}
                     </h3>
 
-                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                    <p className="text-slate-300 text-xs leading-relaxed line-clamp-3">
                       {ind.desc}
                     </p>
 
                     {/* Feature Bullets */}
-                    <ul className="space-y-1.5 pt-3 border-t border-white/10">
+                    <ul className="space-y-1 pt-2.5 border-t border-white/10">
                       {ind.features.map((feat) => (
-                        <li key={feat} className="text-xs text-slate-300 flex items-center gap-2">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                          <span>{feat}</span>
+                        <li key={feat} className="text-[11px] text-slate-300 flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3 h-3 text-cyan-400 shrink-0" />
+                          <span className="truncate">{feat}</span>
                         </li>
                       ))}
                     </ul>
@@ -127,7 +171,7 @@ export default function Industries() {
                 </div>
 
                 {/* Bottom Action CTA */}
-                <div className="px-5 py-3.5 bg-slate-950/60 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition-colors">
+                <div className="px-4 py-3 bg-slate-950/60 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition-colors">
                   <span>Build Solution For My Business</span>
                   <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
