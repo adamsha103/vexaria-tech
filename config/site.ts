@@ -134,6 +134,7 @@ export const siteConfig = {
       metrics: "3.2x Student Engagement",
       featured: true,
       accentColor: "from-blue-600 to-cyan-500",
+      image: "/images/portfolio-edupulse.webp",
     },
     {
       title: "NovaStore E-Commerce",
@@ -143,15 +144,17 @@ export const siteConfig = {
       metrics: "+42% Conversion Rate",
       featured: true,
       accentColor: "from-cyan-500 to-emerald-500",
+      image: "/images/portfolio-novastore.webp",
     },
     {
-      title: "Vanguard Tech Suite",
-      category: "Business Website",
-      description: "Corporate digital website for an enterprise software firm with interactive product previews and contact funnel.",
+      title: "Logix Fleet Tracker",
+      category: "Enterprise Software",
+      description: "Enterprise fleet tracking dashboard with interactive map view, real-time route analytics, and delivery status graphs.",
       tags: ["TypeScript", "Tailwind CSS", "SEO", "Responsive"],
       metrics: "99/100 Core Web Vitals",
-      featured: false,
+      featured: true,
       accentColor: "from-violet-600 to-blue-600",
+      image: "/images/portfolio-logix.webp",
     },
     {
       title: "Apex Workshop Hub",
@@ -161,6 +164,7 @@ export const siteConfig = {
       metrics: "15k+ Monthly Tickets",
       featured: false,
       accentColor: "from-indigo-600 to-cyan-400",
+      image: "/images/hero-preview.webp",
     },
     {
       title: "ClubMember SaaS",
@@ -170,6 +174,7 @@ export const siteConfig = {
       metrics: "99.9% Uptime Guaranteed",
       featured: false,
       accentColor: "from-blue-500 to-violet-500",
+      image: "/images/chatgpt-1.webp",
     },
 
   ],
