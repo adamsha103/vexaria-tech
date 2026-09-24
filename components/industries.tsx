@@ -30,7 +30,6 @@ export default function Industries() {
       desc: "Online fresh vegetable & grocery delivery mobile apps, item weight stock management, Indian Rupee (₹) billing, and WhatsApp order notifications.",
       image: "/images/industry-grocery.webp",
       icon: ShoppingBag,
-      pricingSample: "Daily Fresh Stock (₹49/kg)",
       features: ["Live Stock & Weight Pricing (₹)", "Express Local Store Delivery", "Direct WhatsApp Order Dispatch"],
     },
     {
@@ -40,7 +39,6 @@ export default function Industries() {
       desc: "Hospital management portals, online doctor appointment scheduling, telemedicine consultation, patient health records, and pharmacy EHR.",
       image: "/images/industry-medical.webp",
       icon: Stethoscope,
-      pricingSample: "Doctor Consultation (₹500)",
       features: ["Online Doctor Appointment Booking", "Patient Health & Lab Diagnostics", "Pharmacy Billing & EHR Records"],
     },
     {
@@ -50,7 +48,6 @@ export default function Industries() {
       desc: "Property listing portals, apartment & plot sales, virtual property tours, lead management CRMs, and real estate agent dashboards across Tamil Nadu.",
       image: "/images/industry-realestate.webp",
       icon: Building2,
-      pricingSample: "Plots & Flats (₹45 L - ₹1.2 Cr)",
       features: ["Interactive Map Property Search", "Lead Management & Inquiry CRM", "360° Virtual Property Tour Viewer"],
     },
     {
@@ -60,7 +57,6 @@ export default function Industries() {
       desc: "Custom e-commerce platforms for furniture manufacturers, mattress shops, and bedding stores with custom sizing and home delivery tracking.",
       image: "/images/industry-furniture.webp",
       icon: Armchair,
-      pricingSample: "Teak Sets & Beds (₹35,000)",
       features: ["Custom Dimension & Wood Selector", "HD 3D Product Furniture Gallery", "Doorstep Delivery & Assembly Scheduler"],
     },
     {
@@ -70,7 +66,6 @@ export default function Industries() {
       desc: "Custom online shopping storefronts, multi-vendor marketplace platforms, instant checkout, Indian Rupee (₹) payment gateway integration, and inventory management.",
       image: "/images/portfolio-novastore.webp",
       icon: ShoppingBag,
-      pricingSample: "Online Stores (From ₹14,999)",
       features: ["Razorpay & PhonePe Payment Integration (₹)", "Multi-Vendor Seller Dashboard", "Order Tracking & WhatsApp Invoices"],
     },
     {
@@ -80,7 +75,6 @@ export default function Industries() {
       desc: "E-commerce web apps for silk saree showrooms, clothing boutiques, and garment retail shops with dynamic size charts and coupon codes.",
       image: "/images/industry-textiles.webp",
       icon: Shirt,
-      pricingSample: "Kanchipuram Silk Sarees (₹12,500)",
       features: ["Filter by Fabric, Color & Occasion", "Custom Saree Draping Previews", "Pan-India Shipping & Order Tracking"],
     },
     {
@@ -90,7 +84,6 @@ export default function Industries() {
       desc: "Digital storefronts for mobile phone shops and electronic showrooms with EMI calculators, brand filters, and warranty tracking.",
       image: "/images/industry-electronics.webp",
       icon: Smartphone,
-      pricingSample: "Smartphones & Appliances (₹18,999)",
       features: ["Instant No-Cost EMI Calculator", "Product Specs Comparison Tool", "Store Pickup & Express Delivery"],
     },
   ];
@@ -98,7 +91,7 @@ export default function Industries() {
   return (
     <section id="industries" className="bg-[#0B1220] border-t border-white/10 relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
       <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
@@ -127,12 +120,12 @@ export default function Industries() {
               >
                 <div>
                   {/* WebP Image Banner Display */}
-                  <div className="h-48 relative overflow-hidden">
+                  <div className="h-48 relative overflow-hidden bg-slate-950/80">
                     <Image
                       src={ind.image}
                       alt={ind.title}
                       fill
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                      className="object-contain p-1.5 object-center group-hover:scale-105 transition-transform duration-500 opacity-95 group-hover:opacity-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0D1524] via-transparent to-black/30 z-10" />
 
@@ -142,9 +135,6 @@ export default function Industries() {
                         <IconComponent className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
                         <span className="truncate">{ind.tag}</span>
                       </div>
-                      <span className="px-2 py-0.5 rounded-md bg-emerald-950/80 border border-emerald-500/40 text-[10px] font-mono font-bold text-emerald-300 shadow-md shrink-0">
-                        {ind.pricingSample}
-                      </span>
                     </div>
                   </div>
 
