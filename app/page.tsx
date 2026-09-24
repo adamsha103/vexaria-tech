@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
 import TechStrip from "@/components/tech-strip";
 import Services from "@/components/services";
+import Industries from "@/components/industries";
 import Solutions from "@/components/solutions";
 import Showcase from "@/components/showcase";
 import WhyUs from "@/components/why-us";
@@ -24,6 +25,7 @@ export default function Home() {
         <Hero />
         <TechStrip />
         <Services />
+        <Industries />
         <Solutions />
         <Showcase />
         <WhyUs />
