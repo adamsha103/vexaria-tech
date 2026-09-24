@@ -285,7 +285,19 @@ export default function Contact() {
                   </div>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+                <form
+                  action={`https://formsubmit.co/${siteConfig.email || "aadhamshah@gmail.com"}`}
+                  method="POST"
+                  onSubmit={handleSubmit}
+                  className="space-y-5"
+                  noValidate
+                >
+                  {/* FormSubmit Special Name Attributes */}
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_subject" value={`⚡ New Project Inquiry from ${formData.name || "Client"} - ${siteConfig.name}`} />
+                  <input type="hidden" name="_replyto" value={formData.email} />
+
                   {submitError && (
                     <div className="p-4 rounded-xl bg-red-950/80 border border-red-500/50 flex items-start gap-3 text-red-200 text-xs">
                       <AlertCircle className="w-4 h-4 text-red-400 shrink-0 mt-0.5" />
@@ -301,6 +313,7 @@ export default function Contact() {
                       </label>
                       <input
                         id="contact-name"
+                        name="name"
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -319,6 +332,7 @@ export default function Contact() {
                       </label>
                       <input
                         id="contact-email"
+                        name="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -339,6 +353,7 @@ export default function Contact() {
                       </label>
                       <input
                         id="contact-phone"
+                        name="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -354,6 +369,7 @@ export default function Contact() {
                       </label>
                       <input
                         id="contact-company"
+                        name="company"
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
@@ -370,6 +386,7 @@ export default function Contact() {
                     </label>
                     <select
                       id="contact-service"
+                      name="service"
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-white/10 text-white text-sm focus:outline-none focus:border-cyan-400 transition"
@@ -389,6 +406,7 @@ export default function Contact() {
                     </label>
                     <textarea
                       id="contact-message"
+                      name="message"
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
