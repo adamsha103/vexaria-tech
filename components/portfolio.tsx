@@ -13,16 +13,16 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-20 md:py-28 bg-[#0B1220] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="portfolio" className="bg-[#0B1220] relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Title & Top Action */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
           <div className="space-y-4 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-950/80 border border-blue-500/30 text-blue-300 text-xs font-semibold uppercase tracking-wider">
               <span>Featured Portfolio</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 3rem)" }}>
               Selected <span className="text-gradient-brand">Work</span>
             </h2>
             <p className="text-slate-300 text-base">
@@ -40,7 +40,7 @@ export default function Portfolio() {
         </div>
 
         {/* 6 Project Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3" style={{ gap: "clamp(1rem, 3vw, 2rem)" }}>
           {siteConfig.portfolioProjects.map((project) => (
             <div
               key={project.title}
@@ -75,7 +75,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content Section */}
-                <div className="p-6 space-y-3">
+                <div style={{ padding: "clamp(0.75rem, 3vw, 1.5rem)" }} className="space-y-3">
                   <h3 className="font-heading font-bold text-xl text-white group-hover:text-cyan-300 transition-colors">
                     {project.title}
                   </h3>
@@ -99,7 +99,7 @@ export default function Portfolio() {
               </div>
 
               {/* Bottom Action Footer */}
-              <div className="px-6 py-4 border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition-colors">
+              <div className="border-t border-white/10 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-white transition-colors" style={{ padding: "clamp(0.5rem, 2vw, 1rem) clamp(0.75rem, 3vw, 1.5rem)" }}>
                 <span>View Architecture Case</span>
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>

@@ -15,16 +15,16 @@ export default function Process() {
   };
 
   return (
-    <section id="process" className="py-20 md:py-28 bg-[#0B1220] relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="process" className="bg-[#0B1220] relative overflow-hidden" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Title */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
             <span>Execution Methodology</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 3rem)" }}>
             From Idea to <span className="text-gradient-brand">Launch</span>
           </h2>
 
@@ -64,15 +64,15 @@ export default function Process() {
         </div>
 
         {/* Mobile / Tablet Process View: Vertical Timeline */}
-        <div className="lg:hidden space-y-4 relative before:absolute before:left-6 before:top-4 before:bottom-4 before:w-0.5 before:bg-gradient-to-b before:from-blue-600 before:via-cyan-500 before:to-violet-600">
+        <div className="lg:hidden space-y-3 relative before:absolute before:left-6 before:top-4 before:bottom-4 before:w-0.5 before:bg-gradient-to-b before:from-blue-600 before:via-cyan-500 before:to-violet-600">
           {siteConfig.processSteps.map((step) => {
             const StepIcon = iconMap[step.number] || Compass;
             return (
               <div
                 key={step.number}
-                className="group relative pl-14 p-4 rounded-xl bg-slate-900/80 border border-white/10 hover:border-cyan-400/50 transition-all"
+                className="group relative pl-11 pr-3 py-3 rounded-xl bg-slate-900/80 border border-white/10 hover:border-cyan-400/50 transition-all"
               >
-                <div className="absolute left-2.5 top-4 w-7 h-7 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center text-cyan-400 font-bold text-xs font-mono">
+                <div className="absolute left-2 top-3.5 w-6 h-6 rounded-full bg-slate-950 border-2 border-cyan-400 flex items-center justify-center text-cyan-400 font-bold text-[10px] font-mono">
                   {step.number}
                 </div>
                 <div className="flex items-center gap-2 mb-1">

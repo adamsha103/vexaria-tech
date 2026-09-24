@@ -21,11 +21,11 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0B1220] border-t border-white/10 text-slate-400 relative pt-16 pb-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#0B1220] border-t border-white/10 text-slate-400 relative" style={{ paddingTop: "clamp(1.5rem, 4vw, 3rem)", paddingBottom: "clamp(5rem, 12vw, 6.5rem)" }}>
+      <div className="max-w-7xl mx-auto" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Top Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 mb-10" style={{ gap: "clamp(1.5rem, 4vw, 2.5rem)" }}>
           
           {/* Brand Info (Col Span 2) */}
           <div className="lg:col-span-2 space-y-4">
@@ -65,7 +65,6 @@ export default function Footer() {
               <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">Web Applications</a></li>
               <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">Mobile Applications</a></li>
               <li><a href="#services" onClick={(e) => handleNavClick(e, "#services")} className="hover:text-cyan-400 transition">Custom Software</a></li>
-
             </ul>
           </div>
 
@@ -97,19 +96,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom Rights Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-center sm:text-left">
           <p>© 2026 {siteConfig.name}. All rights reserved.</p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center justify-center gap-3 text-xs">
             <button
               onClick={() => setPrivacyOpen(true)}
-              className="hover:text-cyan-400 transition"
+              className="hover:text-cyan-400 transition py-0.5"
             >
               Privacy Policy
             </button>
+            <span className="text-slate-600 select-none">•</span>
             <button
               onClick={() => setTermsOpen(true)}
-              className="hover:text-cyan-400 transition"
+              className="hover:text-cyan-400 transition py-0.5"
             >
               Terms &amp; Conditions
             </button>

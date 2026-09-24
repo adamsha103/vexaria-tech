@@ -12,11 +12,11 @@ export default function CaseStudy() {
   };
 
   return (
-    <section id="case-study" className="py-20 bg-[#090E1A] border-t border-white/10 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="case-study" className="bg-[#090E1A] border-t border-white/10 relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Container */}
-        <div className="rounded-3xl bg-gradient-to-br from-[#111B2E] via-[#0D1524] to-[#151D30] border border-white/15 p-6 sm:p-10 lg:p-12 shadow-2xl relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-br from-[#111B2E] via-[#0D1524] to-[#151D30] border border-white/15 shadow-2xl relative overflow-hidden" style={{ padding: "clamp(1rem, 4vw, 3rem)" }}>
           
           {/* Subtle Glows */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -27,7 +27,7 @@ export default function CaseStudy() {
               <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
               <span>{caseStudy.subtitle}</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 2.5rem)" }}>
               {caseStudy.title}
             </h2>
             <p className="text-xs font-mono text-slate-400">
@@ -57,13 +57,13 @@ export default function CaseStudy() {
           </div>
 
           {/* Metrics Results Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 border-t border-white/10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 pt-6 border-t border-white/10">
             {caseStudy.results.map((res) => (
-              <div key={res.label} className="p-4 rounded-xl bg-slate-950/90 border border-white/10 text-center">
-                <span className="font-heading text-2xl sm:text-3xl font-bold text-gradient-brand block mb-1">
+              <div key={res.label} className="p-2.5 sm:p-4 rounded-xl bg-slate-950/90 border border-white/10 text-center flex flex-col justify-center min-w-0">
+                <span className="font-heading font-bold text-gradient-brand block mb-1 leading-tight text-xs min-[360px]:text-sm sm:text-xl lg:text-2xl truncate">
                   {res.value}
                 </span>
-                <span className="text-[11px] font-mono text-slate-400 uppercase">
+                <span className="text-[9px] min-[360px]:text-[10px] sm:text-xs font-mono text-slate-400 uppercase leading-snug truncate">
                   {res.label}
                 </span>
               </div>
@@ -76,3 +76,7 @@ export default function CaseStudy() {
     </section>
   );
 }
+
+
+
+

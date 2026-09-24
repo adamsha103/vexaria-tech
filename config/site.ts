@@ -33,7 +33,7 @@ export const siteConfig = {
       title: "Website Development",
       description: "High-performance, fast-loading websites designed to convert visitors into loyal customers.",
       icon: "Globe",
-      features: ["Next.js & SSR Speed", "Modern Web Standards", "Responsive Breakpoints", "Conversion UX Layouts"],
+      features: ["Ultra-Fast Speed & Performance", "Modern Web Standards", "Responsive Breakpoints", "Conversion UX Layouts"],
       badge: "Core Service",
     },
     {
@@ -41,7 +41,7 @@ export const siteConfig = {
       title: "Web Applications",
       description: "Scalable web applications built around your workflows, complex logic, users, and business goals.",
       icon: "LayoutDashboard",
-      features: ["React & Next.js App Router", "State & Data Management", "Role-based Dashboards", "API Integration"],
+      features: ["Modern App Architecture", "State & Data Management", "Role-based Dashboards", "API Integration"],
       badge: "High Demand",
     },
     {
@@ -65,7 +65,7 @@ export const siteConfig = {
       title: "Cloud & Deployment",
       description: "Reliable production deployment, hosting architecture, automated CI/CD pipelines, and cloud setup.",
       icon: "Cloud",
-      features: ["Vercel & AWS Architecture", "CI/CD Pipeline Setup", "CDN & Cache Strategies", "99.9% Uptime Design"],
+      features: ["AWS & Cloud Infrastructure", "CI/CD Pipeline Setup", "CDN & Cache Strategies", "99.9% Uptime Design"],
       badge: "Infrastructure",
     },
   ],
@@ -122,7 +122,7 @@ export const siteConfig = {
     { name: "Node.js", category: "Backend", icon: "Server", color: "text-emerald-400" },
     { name: "PostgreSQL", category: "Database", icon: "Database", color: "text-blue-300" },
     { name: "Prisma ORM", category: "Database", icon: "Cpu", color: "text-indigo-400" },
-    { name: "Vercel / Cloud", category: "Cloud", icon: "Cloud", color: "text-slate-200" },
+    { name: "AWS / Cloud", category: "Cloud", icon: "Cloud", color: "text-slate-200" },
   ],
 
   portfolioProjects: [
@@ -147,7 +147,7 @@ export const siteConfig = {
     {
       title: "Vanguard Tech Suite",
       category: "Business Website",
-      description: "Corporate digital website for an AI enterprise software firm with interactive 3D product previews and contact funnel.",
+      description: "Corporate digital website for an enterprise software firm with interactive product previews and contact funnel.",
       tags: ["TypeScript", "Tailwind CSS", "SEO", "Responsive"],
       metrics: "99/100 Core Web Vitals",
       featured: false,
@@ -250,6 +250,6 @@ export const siteConfig = {
     { name: "Tailwind CSS", icon: "Palette" },
     { name: "Node.js", icon: "Server" },
     { name: "PostgreSQL", icon: "Database" },
-    { name: "Cloud / Vercel", icon: "Cloud" },
+    { name: "AWS / Cloud", icon: "Cloud" },
   ],
 };

@@ -5,8 +5,8 @@ import { Star, Quote } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-20 md:py-28 bg-[#0B1220] relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="testimonials" className="bg-[#0B1220] relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Title */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
@@ -14,7 +14,7 @@ export default function Testimonials() {
             <span>Client Feedback</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 3rem)" }}>
             What Founders & Leaders <span className="text-gradient-brand">Say</span>
           </h2>
 
@@ -24,11 +24,12 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonial Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: "clamp(1rem, 3vw, 2rem)" }}>
           {siteConfig.testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="group relative rounded-2xl bg-slate-900/70 border border-white/10 p-8 hover:border-cyan-400/40 transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1"
+              className="group relative rounded-2xl bg-slate-900/70 border border-white/10 hover:border-cyan-400/40 transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1"
+              style={{ padding: "clamp(1rem, 3vw, 2rem)" }}
             >
               <div>
                 {/* Quote Icon & Stars */}

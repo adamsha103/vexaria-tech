@@ -82,8 +82,8 @@ export default function Contact() {
 
 
   return (
-    <section id="contact" className="py-20 md:py-28 bg-[#090F1B] border-t border-white/10 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="contact" className="bg-[#090F1B] border-t border-white/10 relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           
@@ -95,7 +95,7 @@ export default function Contact() {
                 <span>Get In Touch</span>
               </div>
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+              <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 3rem)" }}>
                 Let&apos;s Build <br />
                 <span className="text-gradient-brand">Something Great.</span>
               </h2>
@@ -106,34 +106,34 @@ export default function Contact() {
             </div>
 
             {/* Quick Contact Cards */}
-            <div className="space-y-4">
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-cyan-400">
-                  <Mail className="w-5 h-5" />
+            <div className="space-y-3 sm:space-y-4">
+              <div className="p-3 sm:p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3 sm:gap-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <div>
-                  <span className="text-[11px] font-mono text-slate-400 uppercase">Direct Email</span>
-                  <p className="font-heading font-bold text-white text-sm sm:text-base">{siteConfig.email}</p>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[11px] font-mono text-slate-400 uppercase">Direct Phone</span>
-                  <p className="font-heading font-bold text-white text-sm sm:text-base">{siteConfig.phone}</p>
+                <div className="min-w-0 flex-1">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase block">Direct Email</span>
+                  <p className="font-heading font-bold text-white text-xs sm:text-base truncate">{siteConfig.email}</p>
                 </div>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400">
-                  <MapPin className="w-5 h-5" />
+              <div className="p-3 sm:p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3 sm:gap-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-cyan-600/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
                 </div>
-                <div>
-                  <span className="text-[11px] font-mono text-slate-400 uppercase">Location</span>
-                  <p className="font-heading font-bold text-white text-sm sm:text-base">{siteConfig.location}</p>
+                <div className="min-w-0 flex-1">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase block">Direct Phone</span>
+                  <p className="font-heading font-bold text-white text-xs sm:text-base truncate">{siteConfig.phone}</p>
+                </div>
+              </div>
+
+              <div className="p-3 sm:p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center gap-3 sm:gap-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-violet-600/20 border border-violet-500/30 flex items-center justify-center text-violet-400 shrink-0">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <span className="text-[10px] sm:text-[11px] font-mono text-slate-400 uppercase block">Location</span>
+                  <p className="font-heading font-bold text-white text-xs sm:text-base truncate">{siteConfig.location}</p>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@ export default function Contact() {
 
           {/* Right Panel: Interactive Contact Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl bg-slate-900/90 border border-white/15 p-6 sm:p-10 shadow-2xl relative">
+            <div className="rounded-3xl bg-slate-900/90 border border-white/15 shadow-2xl relative" style={{ padding: "clamp(1rem, 4vw, 2.5rem)" }}>
               
               {submitted ? (
                 <div className="py-12 text-center space-y-5 animate-fadeIn">

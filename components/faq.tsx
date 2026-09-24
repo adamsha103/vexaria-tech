@@ -12,17 +12,17 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 bg-[#090F1B] border-t border-white/10 relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="faq" className="bg-[#090F1B] border-t border-white/10 relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-4xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-2xl mx-auto space-y-4 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Frequently Asked Questions</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 2.5rem)" }}>
             Got Questions? We Have <span className="text-gradient-brand">Answers</span>
           </h2>
 
@@ -47,13 +47,13 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => toggleFAQ(idx)}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 focus:outline-none"
+                  className="w-full text-left p-3.5 sm:p-5 flex items-center justify-between gap-3 focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-heading font-bold text-base sm:text-lg text-white">
+                  <span className="font-heading font-semibold text-xs min-[360px]:text-sm sm:text-base text-white leading-snug">
                     {faq.q}
                   </span>
-                  <div className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0 transition-transform duration-300 ${
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/5 flex items-center justify-center text-cyan-400 shrink-0 transition-transform duration-300 ${
                     isOpen ? "rotate-180 bg-blue-600 text-white" : ""
                   }`}>
                     <ChevronDown className="w-4 h-4" />
@@ -61,7 +61,7 @@ export default function FAQ() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-4 animate-fadeIn">
+                  <div className="px-3.5 pb-4 sm:px-5 sm:pb-5 text-slate-300 text-xs sm:text-sm leading-relaxed border-t border-white/5 pt-3 animate-fadeIn">
                     {faq.a}
                   </div>
                 )}

@@ -44,9 +44,15 @@ export async function POST(request: Request) {
       body: JSON.stringify(formSubmitPayload),
     });
 
-    const data = await response.json();
+    const textData = await response.text();
+    let data: any = {};
+    try {
+      data = JSON.parse(textData);
+    } catch {
+      data = { success: response.ok, message: textData };
+    }
 
-    if (response.ok && (data.success === "true" || data.success === true)) {
+    if (response.ok && (data.success === "true" || data.success === true || response.status === 200)) {
       return NextResponse.json({
         success: true,
         message: `Inquiry successfully sent to ${recipientEmail}`,

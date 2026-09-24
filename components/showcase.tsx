@@ -7,21 +7,21 @@ export default function Showcase() {
   const [showcaseTab, setShowcaseTab] = useState<"overview" | "analytics">("overview");
 
   return (
-    <section id="showcase" className="py-20 md:py-28 bg-[#0B1220] relative overflow-hidden">
+    <section id="showcase" className="bg-[#0B1220] relative overflow-hidden" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
       {/* Glow Effects */}
       <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-violet-600/10 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-950/80 border border-violet-500/30 text-violet-300 text-xs font-semibold uppercase tracking-wider">
             <Layers className="w-3.5 h-3.5" />
             <span>Cross-Platform Ecosystem</span>
           </div>
 
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+          <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 3rem)" }}>
             One Idea. <br />
             <span className="text-gradient-brand">Multiple Digital Experiences.</span>
           </h2>
@@ -35,7 +35,7 @@ export default function Showcase() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
           {/* Left: Large Browser Window Dashboard Mockup (Col Span 8) */}
-          <div className="lg:col-span-8 rounded-2xl bg-slate-900/90 border border-white/15 p-4 sm:p-6 shadow-2xl shadow-blue-900/20 backdrop-blur-xl relative">
+          <div className="lg:col-span-8 rounded-2xl bg-slate-900/90 border border-white/15 shadow-2xl shadow-blue-900/20 backdrop-blur-xl relative" style={{ padding: "clamp(0.75rem, 2.5vw, 1.5rem)" }}>
             
             {/* Browser Window Header Bar */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4">
@@ -161,7 +161,7 @@ export default function Showcase() {
           <div className="lg:col-span-4 flex justify-center relative">
             
             {/* Phone Frame */}
-            <div className="w-72 sm:w-80 rounded-[40px] bg-slate-950 border-8 border-slate-800 p-4 shadow-2xl relative shadow-cyan-900/30 overflow-hidden">
+            <div className="w-full max-w-[280px] sm:w-80 rounded-[36px] sm:rounded-[40px] bg-slate-950 border-4 sm:border-8 border-slate-800 p-3 sm:p-4 shadow-2xl relative shadow-cyan-900/30 overflow-hidden">
               
               {/* Notch */}
               <div className="w-24 h-4 bg-slate-800 rounded-full mx-auto mb-4" />
@@ -214,8 +214,8 @@ export default function Showcase() {
               </div>
 
               {/* Floating Mobile Badge */}
-              <div className="absolute top-6 -left-3 bg-violet-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg flex items-center gap-1.5">
-                <Smartphone className="w-3.5 h-3.5" />
+              <div className="absolute top-4 left-2 sm:-left-2 bg-violet-600/90 backdrop-blur-md text-white px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-semibold shadow-md flex items-center gap-1">
+                <Smartphone className="w-3 h-3 text-violet-200" />
                 <span>iOS & Android</span>
               </div>
             </div>

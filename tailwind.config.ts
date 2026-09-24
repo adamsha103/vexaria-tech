@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "360px",
+      },
       colors: {
         brand: {
           dark: "#0B1220",
@@ -41,6 +44,8 @@ const config: Config = {
         "float-delayed": "float 6s ease-in-out 3s infinite",
         "glow": "glow 8s ease-in-out infinite alternate",
         "marquee": "marquee 25s linear infinite",
+        "fadeIn": "fadeIn 0.3s ease-out forwards",
+        "slideDown": "slideDown 0.3s ease-out forwards",
       },
       keyframes: {
         float: {
@@ -54,6 +59,14 @@ const config: Config = {
         marquee: {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(-8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        slideDown: {
+          "0%": { opacity: "0", transform: "translateY(-16px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       boxShadow: {

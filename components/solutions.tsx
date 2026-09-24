@@ -23,16 +23,16 @@ export default function Solutions() {
   };
 
   return (
-    <section id="solutions" className="py-16 sm:py-20 bg-[#090F1B] border-t border-white/10 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="solutions" className="bg-[#090F1B] border-t border-white/10 relative" style={{ padding: "clamp(1.5rem, 4vw, 3rem) 0" }}>
+      <div className="max-w-7xl mx-auto relative z-10" style={{ padding: "0 clamp(0.375rem, 2.5vw, 2rem)" }}>
         
         {/* Section Title */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/80 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider">
               <span>Custom Product Archetypes</span>
             </div>
-            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+            <h2 className="font-heading font-extrabold text-white tracking-tight" style={{ fontSize: "clamp(1.25rem, 5vw, 3rem)" }}>
               Technology Built Around <br />
               <span className="text-gradient-brand">Your Business Architecture</span>
             </h2>
@@ -44,14 +44,15 @@ export default function Solutions() {
         </div>
 
         {/* Solutions Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style={{ gap: "clamp(0.5rem, 1.5vw, 1rem)" }}>
           {siteConfig.solutions.map((sol) => {
             const IconComponent = iconMap[sol.icon] || Rocket;
             return (
               <div
                 key={sol.title}
                 onClick={scrollToContact}
-                className="group p-5 rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-500/40 hover:bg-slate-800/80 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1 shadow-md"
+                className="group rounded-xl bg-slate-900/60 border border-white/10 hover:border-cyan-500/40 hover:bg-slate-800/80 transition-all duration-300 flex flex-col justify-between cursor-pointer hover:-translate-y-1 shadow-md"
+                style={{ padding: "clamp(0.75rem, 3vw, 1.25rem)" }}
               >
                 <div>
                   <div className="w-10 h-10 rounded-lg bg-blue-950/60 border border-blue-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500 group-hover:text-slate-950 transition-all mb-4">
