@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const recipientEmail = process.env.RECIPIENT_EMAIL || siteConfig.email || "aadhamshah@gmail.com";
+    const recipientEmail = process.env.RECIPIENT_EMAIL || "1b2b0f8347faf7b1c5eafa74f055e816";
 
     const formSubmitPayload = {
       _subject: `⚡ New Project Inquiry from ${name} - ${siteConfig.name}`,

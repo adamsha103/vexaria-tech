@@ -94,8 +94,8 @@ export default function Contact() {
         return;
       }
 
-      // Tier 2: Direct Browser Fetch to FormSubmit (bypasses serverless proxy blocks)
-      const targetEmail = siteConfig.email || "aadhamshah@gmail.com";
+      // Tier 2: Direct Browser Fetch to FormSubmit using FormSubmit token
+      const targetEmail = "1b2b0f8347faf7b1c5eafa74f055e816";
       const directResponse = await fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
         method: "POST",
         headers: {
@@ -286,7 +286,7 @@ export default function Contact() {
                 </div>
               ) : (
                 <form
-                  action={`https://formsubmit.co/${siteConfig.email || "aadhamshah@gmail.com"}`}
+                  action="https://formsubmit.co/1b2b0f8347faf7b1c5eafa74f055e816"
                   method="POST"
                   onSubmit={handleSubmit}
                   className="space-y-5"
