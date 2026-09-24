@@ -215,36 +215,56 @@ export default function Contact() {
             <div className="rounded-3xl bg-slate-900/90 border border-white/15 shadow-2xl relative" style={{ padding: "clamp(1rem, 4vw, 2.5rem)" }}>
               
               {submitted ? (
-                <div className="py-12 text-center space-y-5 animate-fadeIn">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-emerald-400 mx-auto">
+                <div className="py-8 text-center space-y-5 animate-fadeIn">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-400 flex items-center justify-center text-emerald-400 mx-auto shadow-lg shadow-emerald-500/20">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="font-heading text-2xl font-bold text-white">
-                    Inquiry Sent to Your Mailbox!
+                    Inquiry Created Successfully!
                   </h3>
                   <p className="text-slate-300 text-sm max-w-md mx-auto leading-relaxed">
-                    Your inquiry details have been dispatched directly to <span className="text-cyan-400 font-semibold">{siteConfig.email}</span>.
+                    Thank you <span className="text-cyan-400 font-semibold">{formData.name}</span>. Your project inquiry has been processed for <span className="text-white font-semibold">{siteConfig.email}</span>.
                   </p>
                   
-                  <div className="p-4 rounded-2xl bg-blue-950/60 border border-blue-500/30 text-xs text-slate-300 max-w-md mx-auto text-left space-y-1">
-                    <p className="font-semibold text-cyan-300 flex items-center gap-1.5">
-                      <Sparkles className="w-4 h-4 text-cyan-400" />
-                      Inbox Confirmation Tip:
+                  {/* Detailed Summary Card */}
+                  <div className="p-4 rounded-2xl bg-slate-950/80 border border-white/10 text-xs text-slate-300 max-w-md mx-auto text-left space-y-2">
+                    <p className="font-mono text-cyan-400 uppercase font-bold tracking-wider text-[11px] pb-1 border-b border-white/10">
+                      Inquiry Summary
                     </p>
-                    <p className="text-slate-300 leading-normal">
-                      If this is your first submission, check your Gmail inbox (or Spam folder) for a <strong>FormSubmit Activation Email</strong> and click <em>&ldquo;Activate Form&rdquo;</em> to ensure future inquiries land straight in your Primary Inbox.
-                    </p>
+                    <div className="grid grid-cols-2 gap-2 text-[11px]">
+                      <div><span className="text-slate-400">Name:</span> <p className="text-white font-semibold">{formData.name}</p></div>
+                      <div><span className="text-slate-400">Email:</span> <p className="text-white font-semibold">{formData.email}</p></div>
+                      <div><span className="text-slate-400">Service:</span> <p className="text-white font-semibold">{formData.service}</p></div>
+                      <div><span className="text-slate-400">Phone:</span> <p className="text-white font-semibold">{formData.phone || "N/A"}</p></div>
+                    </div>
                   </div>
 
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                  {/* 1-Tap Action Buttons */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2 max-w-md mx-auto">
                     <a
-                      href={`https://wa.me/916381248055?text=${encodeURIComponent(`Hi VEXARIA TECHNOLOGIES, I just submitted a project inquiry for ${formData.service}.`)}`}
+                      href={`https://wa.me/916381248055?text=${encodeURIComponent(
+                        `Hi VEXARIA TECHNOLOGIES, I just submitted a project inquiry:\n\n• Name: ${formData.name}\n• Email: ${formData.email}\n• Phone: ${formData.phone || "N/A"}\n• Service: ${formData.service}\n• Message: ${formData.message}`
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold text-white transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30"
+                      className="w-full sm:w-auto flex-1 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 active:scale-95"
                     >
-                      <span>Also Chat on WhatsApp</span>
+                      <Sparkles className="w-4 h-4 text-emerald-200" />
+                      <span>Chat on WhatsApp</span>
                     </a>
+
+                    <a
+                      href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(`⚡ New Project Inquiry: ${formData.name} - ${formData.service}`)}&body=${encodeURIComponent(
+                        `Hi VEXARIA TECHNOLOGIES Team,\n\nHere are my project details:\n\nFull Name: ${formData.name}\nWork Email: ${formData.email}\nPhone Number: ${formData.phone || "Not Provided"}\nCompany Name: ${formData.company || "Not Provided"}\nService Requirement: ${formData.service}\n\nProject Details:\n${formData.message}\n\nSubmitted at: ${new Date().toLocaleString()}`
+                      )}`}
+                      className="w-full sm:w-auto flex-1 px-5 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs font-bold text-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30 active:scale-95"
+                    >
+                      <Mail className="w-4 h-4 text-blue-200" />
+                      <span>Open Email App</span>
+                    </a>
+                  </div>
+
+                  <div className="pt-2">
                     <button
                       onClick={() => {
                         setSubmitted(false);
@@ -258,7 +278,7 @@ export default function Contact() {
                           message: "",
                         });
                       }}
-                      className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-semibold text-white transition"
+                      className="px-5 py-2.5 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-medium text-slate-300 transition border border-white/10"
                     >
                       Send Another Inquiry
                     </button>
