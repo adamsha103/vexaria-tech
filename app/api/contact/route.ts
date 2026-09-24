@@ -15,9 +15,6 @@ export async function POST(request: Request) {
 
     const recipientEmail = process.env.RECIPIENT_EMAIL || siteConfig.email || "aadhamshah@gmail.com";
 
-    // Extract request headers for Origin and Referer so FormSubmit recognizes web server source
-    const requestOrigin = request.headers.get("origin") || request.headers.get("referer") || "http://localhost:3000";
-
     const formSubmitPayload = {
       _subject: `⚡ New Project Inquiry from ${name} - ${siteConfig.name}`,
       _template: "table",
@@ -32,48 +29,103 @@ export async function POST(request: Request) {
       "Submission Time": new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" }),
     };
 
-    const response = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        Referer: requestOrigin,
-        Origin: requestOrigin,
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-      },
-      body: JSON.stringify(formSubmitPayload),
+    // Attempt 1: Direct JSON fetch to FormSubmit
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formSubmitPayload),
+      });
+
+      const textData = await response.text();
+
+      // Detect Cloudflare Bot Challenge HTML string
+      if (textData.includes("<!DOCTYPE") || textData.includes("Just a moment") || textData.includes("challenge-error") || textData.includes("cf_chl_opt")) {
+        console.warn("FormSubmit returned Cloudflare challenge. Falling back to browser direct submission...");
+        return NextResponse.json({
+          success: false,
+          useClientFallback: true,
+          error: "Cloudflare security challenge detected on serverless proxy.",
+        });
+      }
+
+      let data: any = {};
+      try {
+        data = JSON.parse(textData);
+      } catch {
+        data = { success: response.ok, message: textData };
+      }
+
+      if (response.ok && (data.success === "true" || data.success === true || response.status === 200)) {
+        return NextResponse.json({
+          success: true,
+          message: `Inquiry successfully sent to ${recipientEmail}`,
+          data,
+        });
+      }
+    } catch (fsErr) {
+      console.warn("FormSubmit JSON endpoint failed, trying URL encoded fallback...", fsErr);
+    }
+
+    // Attempt 2: Form-urlencoded fallback to FormSubmit
+    try {
+      const urlParams = new URLSearchParams();
+      Object.entries(formSubmitPayload).forEach(([key, val]) => urlParams.append(key, String(val)));
+
+      const fallbackResponse = await fetch(`https://formsubmit.co/ajax/${recipientEmail}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+        },
+        body: urlParams.toString(),
+      });
+
+      const fallbackText = await fallbackResponse.text();
+
+      if (fallbackText.includes("<!DOCTYPE") || fallbackText.includes("Just a moment") || fallbackText.includes("challenge-error")) {
+        return NextResponse.json({
+          success: false,
+          useClientFallback: true,
+          error: "Cloudflare security challenge detected on form-urlencoded attempt.",
+        });
+      }
+
+      let fallbackData: any = {};
+      try {
+        fallbackData = JSON.parse(fallbackText);
+      } catch {
+        fallbackData = { success: fallbackResponse.ok, message: fallbackText };
+      }
+
+      if (fallbackResponse.ok || fallbackData.success === "true" || fallbackData.success === true) {
+        return NextResponse.json({
+          success: true,
+          message: `Inquiry successfully sent to ${recipientEmail}`,
+          data: fallbackData,
+        });
+      }
+    } catch (fbErr) {
+      console.warn("Urlencoded fallback error:", fbErr);
+    }
+
+    // Fallback response instructing client to execute direct browser submit
+    return NextResponse.json({
+      success: false,
+      useClientFallback: true,
+      error: "Server delivery fallback triggered.",
     });
 
-    const textData = await response.text();
-    let data: any = {};
-    try {
-      data = JSON.parse(textData);
-    } catch {
-      data = { success: response.ok, message: textData };
-    }
-
-    if (response.ok && (data.success === "true" || data.success === true || response.status === 200)) {
-      return NextResponse.json({
-        success: true,
-        message: `Inquiry successfully sent to ${recipientEmail}`,
-        data,
-      });
-    } else {
-      console.error("FormSubmit API response error:", data);
-      return NextResponse.json(
-        {
-          success: false,
-          error: data.message || "Email service returned an error.",
-        },
-        { status: response.status || 500 }
-      );
-    }
   } catch (error: any) {
-    console.error("Error sending inquiry email:", error);
-    return NextResponse.json(
-      { success: false, error: error.message || "Failed to send inquiry email" },
-      { status: 500 }
-    );
+    console.error("Error in contact API route:", error);
+    return NextResponse.json({
+      success: false,
+      useClientFallback: true,
+      error: "Server route error. Using direct browser delivery...",
+    });
   }
 }
 
