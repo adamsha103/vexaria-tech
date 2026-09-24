@@ -64,7 +64,7 @@ export default function Industries() {
       title: "E-Commerce & Digital Storefronts",
       tag: "E-Commerce & Marketplaces",
       desc: "Custom online shopping storefronts, multi-vendor marketplace platforms, instant checkout, Indian Rupee (₹) payment gateway integration, and inventory management.",
-      image: "/images/portfolio-novastore.webp",
+      image: "/images/industry-ecommerce.webp",
       icon: ShoppingBag,
       features: ["Razorpay & PhonePe Payment Integration (₹)", "Multi-Vendor Seller Dashboard", "Order Tracking & WhatsApp Invoices"],
     },
